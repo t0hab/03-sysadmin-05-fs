@@ -13,7 +13,7 @@
 
 ---
 
-1. Сделайте `vagrant destroy` на имеющийся инстанс Ubuntu. Замените содержимое Vagrantfile следующим:
+3. Сделайте `vagrant destroy` на имеющийся инстанс Ubuntu. Замените содержимое Vagrantfile следующим:
 
     ```bash
     Vagrant.configure("2") do |config|
