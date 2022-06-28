@@ -66,6 +66,67 @@ Device       Start     End Sectors  Size Type
 
 5. Используя `sfdisk`, перенесите данную таблицу разделов на второй диск.
 
+### Ответ:
+
+```
+Checking that no-one is using this disk right now ... OK
+
+Disk /dev/sdc: 2.51 GiB, 2684354560 bytes, 5242880 sectors
+Disk model: VBOX HARDDISK   
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+>>> Script header accepted.
+>>> Script header accepted.
+>>> Script header accepted.
+>>> Script header accepted.
+>>> Script header accepted.
+>>> Script header accepted.
+>>> Created a new GPT disklabel (GUID: 7420408E-F068-BE4B-9DA2-EE190DA7D696).
+/dev/sdc1: Created a new partition 1 of type 'Linux filesystem' and of size 2 GiB.
+/dev/sdc2: Created a new partition 2 of type 'Linux filesystem' and of size 511 MiB.
+/dev/sdc3: Done.
+
+New situation:
+Disklabel type: gpt
+Disk identifier: 7420408E-F068-BE4B-9DA2-EE190DA7D696
+
+Device       Start     End Sectors  Size Type
+/dev/sdc1     2048 4196351 4194304    2G Linux filesystem
+/dev/sdc2  4196352 5242846 1046495  511M Linux filesystem
+
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+vagrant@vagrant:~$ sudo fdisk -l /dev/sdb
+Disk /dev/sdb: 2.51 GiB, 2684354560 bytes, 5242880 sectors
+Disk model: VBOX HARDDISK   
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 7420408E-F068-BE4B-9DA2-EE190DA7D696
+
+Device       Start     End Sectors  Size Type
+/dev/sdb1     2048 4196351 4194304    2G Linux filesystem
+/dev/sdb2  4196352 5242846 1046495  511M Linux filesystem
+vagrant@vagrant:~$ sudo fdisk -l /dev/sdc
+Disk /dev/sdc: 2.51 GiB, 2684354560 bytes, 5242880 sectors
+Disk model: VBOX HARDDISK   
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 7420408E-F068-BE4B-9DA2-EE190DA7D696
+
+Device       Start     End Sectors  Size Type
+/dev/sdc1     2048 4196351 4194304    2G Linux filesystem
+/dev/sdc2  4196352 5242846 1046495  511M Linux filesystem
+vagrant@vagrant:~$ 
+```
+
+
 1. Соберите `mdadm` RAID1 на паре разделов 2 Гб.
 
 1. Соберите `mdadm` RAID0 на второй паре маленьких разделов.
