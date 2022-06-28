@@ -40,12 +40,28 @@ t0hab@homepc:~/netology/vagrant_home$ sudo vagrant destroy
 ```
 ![image](https://i.ibb.co/SyWky4M/image.png)
 
-![image](https://i.ibb.co/H71s064/image.png)
+![image](https://i.ibb.co/MM3KLsT/image.png)
 
 ----
     
 
 4. Используя `fdisk`, разбейте первый диск на 2 раздела: 2 Гб, оставшееся пространство.
+
+### Ответ:
+```
+vagrant@vagrant:~$ sudo fdisk -l /dev/sdb
+Disk /dev/sdb: 2.51 GiB, 2684354560 bytes, 5242880 sectors
+Disk model: VBOX HARDDISK   
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 7420408E-F068-BE4B-9DA2-EE190DA7D696
+
+Device       Start     End Sectors  Size Type
+/dev/sdb1     2048 4196351 4194304    2G Linux filesystem
+/dev/sdb2  4196352 5242846 1046495  511M Linux filesystem
+```
 
 1. Используя `sfdisk`, перенесите данную таблицу разделов на второй диск.
 
