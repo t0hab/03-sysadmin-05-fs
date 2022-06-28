@@ -31,7 +31,21 @@
 
     Данная конфигурация создаст новую виртуальную машину с двумя дополнительными неразмеченными дисками по 2.5 Гб.
 
-1. Используя `fdisk`, разбейте первый диск на 2 раздела: 2 Гб, оставшееся пространство.
+### Ответ:
+```
+t0hab@homepc:~/netology/vagrant_home$ sudo vagrant destroy
+    default: Are you sure you want to destroy the 'default' VM? [y/N] y
+==> default: Forcing shutdown of VM...
+==> default: Destroying VM and associated drives...
+```
+![image](https://i.ibb.co/SyWky4M/image.png)
+
+![image](https://i.ibb.co/H71s064/image.png)
+
+----
+    
+
+4. Используя `fdisk`, разбейте первый диск на 2 раздела: 2 Гб, оставшееся пространство.
 
 1. Используя `sfdisk`, перенесите данную таблицу разделов на второй диск.
 
