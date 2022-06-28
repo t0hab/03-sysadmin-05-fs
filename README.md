@@ -32,7 +32,7 @@
     Данная конфигурация создаст новую виртуальную машину с двумя дополнительными неразмеченными дисками по 2.5 Гб.
 
 ### Ответ:
-```
+```bash
 t0hab@homepc:~/netology/vagrant_home$ sudo vagrant destroy
     default: Are you sure you want to destroy the 'default' VM? [y/N] y
 ==> default: Forcing shutdown of VM...
@@ -48,7 +48,8 @@ t0hab@homepc:~/netology/vagrant_home$ sudo vagrant destroy
 4. Используя `fdisk`, разбейте первый диск на 2 раздела: 2 Гб, оставшееся пространство.
 
 ### Ответ:
-```
+
+```bash
 vagrant@vagrant:~$ sudo fdisk -l /dev/sdb
 Disk /dev/sdb: 2.51 GiB, 2684354560 bytes, 5242880 sectors
 Disk model: VBOX HARDDISK   
@@ -68,7 +69,7 @@ Device       Start     End Sectors  Size Type
 
 ### Ответ:
 
-```
+```bash
 Checking that no-one is using this disk right now ... OK
 
 Disk /dev/sdc: 2.51 GiB, 2684354560 bytes, 5242880 sectors
